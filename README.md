@@ -1,0 +1,1 @@
+# intellistart-java-project
