@@ -1,7 +1,7 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Java CI with Maven
+name: Java CI with Maven & Jacoco coverage
 
 on:
   push:
@@ -26,4 +26,18 @@ jobs:
       run: |
         cd ./intellistart-java-2022-dreamteam
         ./mvnw -B package --file pom.xml
-      
+    
+    - name: Add coverage to PR
+      id: jacoco
+      uses: madrapps/jacoco-report@v1.3
+      with:
+        paths: ${{ github.workspace }}/intellistart-java-2022-dreamteam/target/site/jacoco/jacoco.xml
+        token: ${{ secrets.REPO_COMMIT_TOKEN }}
+        min-coverage-overall: 10
+        min-coverage-changed-files: 10
+
+    - name: Log coverage percentage
+      run: |
+        echo "coverage overall = ${{ steps.jacoco.outputs.coverage-overall }}"
+        echo "coverage changed files = ${{ steps.jacoco.outputs.coverage-changed-files }}"  
+
