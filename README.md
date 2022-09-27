@@ -113,6 +113,7 @@ If you not sure what to do regarding some area, you might crearte like:
     * what **prevents** me from doing what I need?
 * commit into branches and **find a reviewer** for your pull requests
 * review other's pull requests as a **volunteer** as much as you can
+* make a demo presentation at least once (see below)
 
 ### Everybody should
 
@@ -128,3 +129,6 @@ If you not sure what to do regarding some area, you might crearte like:
     * if your PR is lowering the test coverage, you have to explain it on code review
 * always prefer live communication on code review, do not play ping-pong there
 
+### Demo meetings
+
+TBD
