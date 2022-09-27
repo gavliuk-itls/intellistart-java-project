@@ -22,10 +22,10 @@ Addons:
 * [Non-functional requirement](./docs/REQUIREMENTS_NF.md)
 
 
-## Start the team and the project
+## Start the team & project
 
 * Create your community space (telegram, discord, whatever)
-* Organize first "Team Bootstrap" meeting (<1 hour)
+* Organize the first "Team Bootstrap" meeting (<1 hour)
 
 ### Team Bootstrap meeting
 
@@ -35,15 +35,15 @@ Addons:
 
 **Why**: to meet each other and you need a repository, right?
 
-* give the name to your team; one english/img/ word like "assasins", "neptun", "nirvana", etc.
-* somebody shares the screen and do [repository setup](./docs/SETUP_REPO.md)
+* give the name to your team; one english word like "assasins", "neptune", "nirvana", etc.
+* somebody shares the screen and does the [repository setup](./docs/SETUP_REPO.md)
 * everybody do `git clone` of your project and run `./mvnw clean package` to check everything is fine
-* vote for 2 collegues who will do [initial decomposition](./docs/INITIAL_DECOMPOSITION.md)
+* vote for two+ colleagues who will do the [initial decomposition](./docs/INITIAL_DECOMPOSITION.md)
 * schedule two next meetings:
-    * [Bootstrap code session](#bootstrap-code-session): just for 2 de-compositors :) 
+    * [Bootstrap code session](#bootstrap-code-session): just for that two de-compositors :) 
     * [Grooming and Planning](#grooming-and-planning): for all
 
-> **Notify menthor that meeting is passed, provide contacts of 2 decomposition volunteers and github repository URL**.
+> **Notify mentor that meeting is passed, provide contacts of 2 decomposition volunteers and github repository URL**.
 
 ### Bootstrap code session
 
@@ -51,53 +51,53 @@ Addons:
 
 **Timing**: ~2 hour
 
-**Why**: a way to get a clue how to make decomposition and try pair programming
+**Why**: a way to get a clue about how to make decomposition and try pair programming
 
 * read [Functional requirements](#functional-requirements)
-* make some pair-programming session and create basic services and controllers, see [initial decomposition](./docs/INITIAL_DECOMPOSITION.md)
-* suggestion: try to work on this session in Test Driven way: make some core functional tests at very high level (only positive scenarios, might be not completed or without assertions, etc) and make it working (green) by mocking and creating basic entity classes
-* make pull request and initiate/schedule [Grooming and Planning](#grooming-and-planning)
-* the commit subject would be `:rocket: Create essential stubs`
+* conduct a pair-programming session and create essential services, beans and controllers, see the [initial decomposition](./docs/INITIAL_DECOMPOSITION.md)
+* suggestion: try to work on this session in Test Driven way: make some core functional tests at a very high level (only positive scenarios, might be incompleted or having no assertions, etc) and make it working (green)
+* make a pull request; the commit subject would be `:rocket: Create essential stubs`
+* initiate/schedule [Grooming and Planning](#grooming-and-planning) all-hands meeting
 
 ### Grooming and planning
 
 ![Meeting3](./img/meeting3.png)
 
-Timing: ~2 hour
+**Timing**: ~2 hour
 
-**Why**: to practice typical Grooming/Planning scrum meeting at the same time the first code review
+**Why**: to practice a typical Grooming/Planning scrum meeting at the same time as the first code review
 
 > The hardest meeting. 
 > 
-> Even do not try to make an *ideal* or
-> *complete* planning. The goal for now is just everybody 
+> Even do not try to make *ideal* or
+> *complete* planning. The goal, for now, is just that everybody 
 > must have some clear things to do and assigned Issue.
 
-In fact this will be the first Code Review session when all the team do code review of `Create essential stubs` pull request.
+In fact, this will be the first Code Review session when all the team do code review of `Create essential stubs` pull request.
 
-* 2 authors share the PR screen and present the code and explain the decomposition
+* two authors share the PR screen and present the code and explain the decomposition
 * all the team discussing, if required
 * somebody starts to create gitlab issues, use your estimate as suffix of subject, e.g.: `Implement InterviewerTimeSlotService: 8h`
 * decide who will be assigned to each task: everybody must be assigned at least to one issue
 * merge the reviewed pull request
 
-At the end you got decomposition by services, so what you need is create issues in github:
+In the end, you got decomposition by services, so what you need is to create issues in github:
 
 * Implement service FooService
 * Implement service BarService
 
-Or maybe starting from scenarios (might be better way):
+Or maybe starting from scenarios (might be a better way):
 
 * Implement scenario Bla-bla
 * Implement scenario Foo-bar
 
-If you not sure what to do regarding some area, you might crearte like:
+If you are not sure what to do regarding some areas, you might create like:
 
 * Investigate Facebook oauth2 for AuthService
     * better to explain what result would be there, e.g. code snippet how to do something or maybe some not merged experimental branch with some working stuff; so, the next "Implement ..." issue might reuse it  
 
 
-> **Notify menthor that meeting is passed, provide contacts of 2 decomposition volunteers and github repository URL**.
+> **Notify mentor that meeting is passed, provide contacts of 2 decomposition volunteers and github repository URL**.
 
 
 ## Project proceeding
@@ -107,7 +107,7 @@ If you not sure what to do regarding some area, you might crearte like:
 ### Everybody must
 
 * have assigned [github issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) at every moment during the project
-* make **daily** status report as a comment to your current issue which answers questions
+* make a **daily** status report as a comment to your current issue which answers questions
     * what I **did** yesterday?
     * what I **plan** to do?
     * what **prevents** me from doing what I need?
@@ -116,15 +116,16 @@ If you not sure what to do regarding some area, you might crearte like:
 
 ### Everybody should
 
-* do self-review before ask others for review 
+* do self-review before asking others for a review 
 * try to [keep PR small](https://softwareengineering.stackexchange.com/questions/10793/when-is-a-version-control-commit-too-large): 
-    * daily 2-3 files with 20-100 lines is *much* better than 1000+ lines at the end of week (do you think you easely find review volunteer for this?)
+    * daily 2-3 files with 20-100 lines is *much* better than 1000+ lines at the end of the week 
+    (do you think you easily find a review volunteer for this?)
 * use the basic commit message policy: 
     * 72 chars subject
     * imperative: "Fixed(ing) bug of something" (bad) -> "Fix bug of something" (good)
     * mention issue ID in description
     * use https://gitmoji.dev/ :)
-* keep test coverage high (i.e. 60%-80%)
-    * if your PR is lowering the test coverage, you have to explain it on code review
-* always prefer live communication on code review, do not play ping-pong there
+* keep test coverage high (i.e., 60%-80%)
+    * if your PR is lowering the test coverage, you have to explain it at the code review
+* always prefer live communication on code review, do not play ping-pong in comments there
 
