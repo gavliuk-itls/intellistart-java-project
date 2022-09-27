@@ -2,9 +2,27 @@
 
 ## Overview
 
-??????
+This is the test project for Intellistart program students.
 
-## Start the team & project
+The main goal is to demonstrate as much as possible all the aspects of working on real commercial project.
+
+The general guide:
+
+* [Start the team and the project](#start-the-team-and-the-project)
+    * [Team Bootstrap meeting](#team-bootstrap-meeting)
+    * [Bootstrap code session](#bootstrap-code-session)
+    * [Grooming and planning](#grooming-and-planning)
+* [Project proceeding](#project-proceeding)
+
+Addons:
+
+* [Setup github repository guide](./docs/SETUP_REPO.md)
+* [Initial code session guide](./docs/INITIAL_DECOMPOSITION.md)
+* [Functional requirements](./docs/REQUIREMENTS.md)
+* [Non-functional requirement](./docs/REQUIREMENTS_NF.md)
+
+
+## Start the team and the project
 
 * Create your community space (telegram, discord, whatever)
 * Organize first "Team Bootstrap" meeting (<1 hour)
