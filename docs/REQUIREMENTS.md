@@ -22,7 +22,8 @@ candidate slots are received. if there is no matching, provide available Intervi
 
 ### Common
 
-All time values and diapasons mean the timezone obtained from application configuration (configured before application starts).
+1. All time values and diapasons mean the timezone obtained from application configuration (configured before application starts).
+2. Any user can get current and previous week numbers (to use them when proceeding other operations)
 
 ### Interviewer
 
@@ -35,12 +36,22 @@ All time values and diapasons mean the timezone obtained from application config
 > In case of unexpected activities e.g ad-hoc meetings. The interviewer may contact the
 > coordinator for slot changing or blocking.
 
+Update:
+
+* Interviewer have the limit of interviews (bookings) which can be conducted per week
+
 1. Guest user can be authenticated by Facebook oauth2 and if the E-mail is granted by `INTERVIEWER` role, is identified as Interviewer.
 1. Interviewer can create or update time slots for next week
     * can do it until end of Friday (00:00) of current week
     * time slot means day of week + time diapason (e.g. "Wed 17:30-20:00"), boundaries are rounded to 30 minutes, duration must be greather or equal 1.5 hours, start time cannot be less than 8:00, end time cannot be greater than 22:00
 1. Interviewer can see own current week time slots
+    * each slot contains the list of bookings in this slot, if any
 1. Interviewer can see own next week time slots
+    * each slot contains the list of bookings in this slot, if any
+1. Interviewer can set the maximum number of bookings for next week
+    * maximum bookings means system will not allow to create more than that number of bookings (even if there are some free time slots)
+    * if maximum number of bookings is not set for certain week, the previous week limit is actual (or previous of previous, so on)
+        * if limit was never set, any number of bookings can be assigned to interviewer
 
 ### Candidate
 
@@ -50,11 +61,20 @@ All time values and diapasons mean the timezone obtained from application config
 > The candidate may accept or refuse the new slots. And, a slot is marked as booked or 
 > becomes free again, respectively.
 
+Update:
+
+* We have decided do not to apply any booking automatically after sending slots; all bookings are created by Coordinator
+
+Cases:
+
 1. Guest user can be authenticated by Facebook oauth2 and if the E-mail is not granted any special role, is identified as Candidate.
-1. Candidate can create one or more availability Slots:
+1. Candidate can create one or more availability Slots (`POST /candidates/current/slots`):
     * Slot must be in future
     * Slot has to be 1.5 hours or more and rounded to 30 minutes
-1. Candidate 
+    * Slot is defined as exact date and time diapason (not like Interviewer slot, where day of week and week number are used)
+1. Candidate can update own slots only if there is no bookings (`POST /candidates/current/slots/{slotId}`)
+1. Candidate can see all own slots: `GET /candidates/current/slots`
+    * each slot contains the list of bookings in this slot, if any
 
 
 ## Coordinator
@@ -64,8 +84,20 @@ All time values and diapasons mean the timezone obtained from application config
 > When the candidate slots are received, search for full matching, otherwise provides the
 > alternative slots.
 
-1. Coordinator can update any Interviewer's time slot (next week or current week)
-    * all Bookings into these slots 
+1. Coordinator can see all the candidates and interviewers slots by `GET /weeks/{weekId}/dashboard`
+    * groupped by days, each day:
+        * contains all interviewers slots with booking's IDs inside 
+        * contains all candidates slots with booking's IDs inside
+        * contains map of bookings as map bookingId => bookingData
+1. Coordinator can update any Interviewer's time slot (next week or current week): `POST /interviewers/{interviewerId}/slots/{slotId}`
+1. Coordinator can create booking: `POST /bookings`, providing:
+    * interviewer slot ID
+    * candidate slot ID
+    * start and end time (must be 1.5 hours inside both slots)
+    * subject (0-255 chars) and description (up to 4KB)
+1. Coordinator can update any booking: `POST /bookings/{bookingId}`
+1. Coordinator can delete booking: `DELETE /bookings/{bookingId}`
+
 
 ### Interviewer slot
 
@@ -128,6 +160,27 @@ Response:
 }
 ```
 
+### Me endpoint
+
+```json
+GET /me
+
+Response:
+{
+    "email": "your@email.com",
+    "role": "INTERVIEWER",
+    "id": "some-UUID-only-for-COORDINATOR-or-INTERVIEWER"
+}
+```
+
+For the Guest, response should be same as for any other endpoint, not allowed for Guests:
+```json
+HTTP 403
+{
+    "errorCode": "not_authorized",
+    "errorMessage": "You are not authorized to use this functionality"
+}
+```
 
 ### Create interviewer time slot
 
