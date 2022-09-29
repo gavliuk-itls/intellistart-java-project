@@ -113,6 +113,7 @@ If you are not sure what to do regarding some areas, you might create like:
     * what **prevents** me from doing what I need?
 * commit into branches and **find a reviewer** for your pull requests
 * review other's pull requests as a **volunteer** as much as you can
+* be presenter on weekly demos at least once
 
 ### Everybody should
 
@@ -125,7 +126,22 @@ If you are not sure what to do regarding some areas, you might create like:
     * imperative: "Fixed(ing) bug of something" (bad) -> "Fix bug of something" (good)
     * mention issue ID in description
     * use https://gitmoji.dev/ :)
+* use "Squash and merge" when merging your pull requests (to avoid expose your working commits in `main`)
 * keep test coverage high (i.e., 60%-80%)
     * if your PR is lowering the test coverage, you have to explain it at the code review
 * always prefer live communication on code review, do not play ping-pong in comments there
 
+### Weekly demos
+
+Every week there are 2 hours meeting with mentor.
+
+One of this hour should be a demo from teams, and second hour is open Q&A session.
+
+Your team have to present short (10 minutes!) demo of team work of previous week.
+
+The demo is sharing the screen and:
+* show the tasks were closed this week
+* show the tasks which was not closed this week but *expected* to be closed and explain the problems 
+* if possible, show some functionality of closed tasks:
+   * the best way for backend API functionality demo is to run Postman and demonstrate working requests / scenarios
+* show tasks planned to close next week
