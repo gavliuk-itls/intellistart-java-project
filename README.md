@@ -145,3 +145,15 @@ The demo is sharing the screen and:
 * if possible, show some functionality of closed tasks:
    * the best way for backend API functionality demo is to run Postman and demonstrate working requests / scenarios
 * show tasks planned to close next week
+
+### Final demo
+
+The final demo is similar to weekly demo but time slot will be 20 minute per team.
+
+For the final demo choose the team speaker and build zthe agenda on:
+
+1. Demonstrating the functionality (Postman)
+2. Explain the most successes and failures in this project
+3. What you would do better in the next project? 
+
+
