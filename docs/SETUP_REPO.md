@@ -33,6 +33,7 @@ git push
 
 ## Test it by proceeding the first pull request
 
+* set up the Intellij IDEA codestyle: `IDEA: Settings -> Editor -> Code Style -> Scheme -> Import scheme...` and choose `intellij-code-style.xml` file
 * make some branch for testing, like create an `README.md` file: 
 
 ```sh
