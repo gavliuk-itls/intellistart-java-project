@@ -53,7 +53,7 @@ Addons:
 
 **Why**: a way to get a clue about how to make decomposition and try pair programming
 
-* read [Functional requirements](#functional-requirements)
+* read [Functional requirements](./docs/REQUIREMENTS.md)
 * conduct a pair-programming session and create essential services, beans and controllers, see the [initial decomposition](./docs/INITIAL_DECOMPOSITION.md)
 * suggestion: try to work on this session in Test Driven way: make some core functional tests at a very high level (only positive scenarios, might be incompleted or having no assertions, etc) and make it working (green)
 * make a pull request; the commit subject would be `:rocket: Create essential stubs`
