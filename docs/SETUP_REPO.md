@@ -10,6 +10,14 @@ You might just copy all the shell commands if you preliminary do export `TEAM` v
 * clone that empty repository locally `git clone git@github.com:{your-account}/intellistart-java-2022-${TEAM}`
 * clone as well the reference project `git clone git@github.com:gavluk-intellias/intellistart-java-project.git`
 * copy from reference project all the template files into your repo: `cp -r ./intellistart-java-project/intellistart-java-2022-dreamteam/. ./intellistart-java-2022-${TEAM}`
+* check/set execution permissions for ./mvnw: 
+
+```
+git update-index --chmod=+x ./mwnw
+
+# as well for linux or mac:
+chmod 755 ./mwnw
+```
 
 ```sh
 cd ./intellistart-java-2022-${TEAM} 
