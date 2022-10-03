@@ -104,7 +104,9 @@ Cases:
 > These kinds of slots may have the following statuses;
 > New, Changed, Pre-booked, Booked, Deleted.
 
-Slots are not exactly match Bookings. 
+Update: 
+
+* Slots are not exactly match Bookings, so these statuses are not rerquired; both slots and booking might be there or just deleted; but every booking must be linked to two slots (Interviewer's and Candidate's)
 
 Example 1: slot 9:00-17:00 is 8 hours, which cannot be devided 
 to 1.5 hours (8/1.5 = 5.3333 bookings?)
@@ -198,6 +200,7 @@ Response:
 
 {
     "id": "<slotId>",
+    "weekNum": 12,
     "dayOfWeek": "Fri",
     "from": "9:00",
     "to": "17:00"
