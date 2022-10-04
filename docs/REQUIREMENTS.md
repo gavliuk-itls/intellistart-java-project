@@ -97,6 +97,14 @@ Cases:
     * subject (0-255 chars) and description (up to 4KB)
 1. Coordinator can update any booking: `POST /bookings/{bookingId}`
 1. Coordinator can delete booking: `DELETE /bookings/{bookingId}`
+1. Coordinator can grant the Interviewer role: `POST /users/interviewers` providing the E-mail of user
+1. Coordinator can list the granted Interviewers: `GET /users/interviewers`
+1. Coordinator can revoke the Interviewer role: `DELETE /users/interviewers/<interviewer-id>`
+1. Coordinator can grant the Coordinator role: `POST /users/coordinators` providing the E-mail of user
+1. Coordinator can list the granted Coordinators: `GET /users/coordinators`
+1. Coordinator can revoke the Coordinator role: `DELETE /users/coordinators/<coordinator-id>`
+    * Corrdinator cannot revoke himself
+1. The first coordinarot must be created automatically in DB on application deployment
 
 
 ### Interviewer slot
