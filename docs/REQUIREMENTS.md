@@ -94,7 +94,7 @@ Cases:
     * interviewer slot ID
     * candidate slot ID
     * start and end time (must be 1.5 hours inside both slots)
-    * subject (0-255 chars) and description (up to 4KB)
+    * subject (0-255 chars) and description (up to 4000 chars)
 1. Coordinator can update any booking: `POST /bookings/{bookingId}`
 1. Coordinator can delete booking: `DELETE /bookings/{bookingId}`
 1. Coordinator can grant the Interviewer role: `POST /users/interviewers` providing the E-mail of user
