@@ -34,4 +34,4 @@ Test scenario should include following steps:
 ## Security
 
 * facebook oauth2 token must not be logged at levels INFO, WARN or ERROR
-* local JWT token must bot be logged at levels INFO, WARN or ERROR
+* local JWT token must not be logged at levels INFO, WARN or ERROR
