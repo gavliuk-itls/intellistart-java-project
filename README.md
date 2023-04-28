@@ -35,7 +35,7 @@ Addons:
 
 **Why**: to meet each other and you need a repository, right?
 
-* give the name to your team; one english word like "assasins", "neptune", "nirvana", etc.
+* give the name to your team; one english word like "rainbow", "unicorn", "superheroes", etc.
 * somebody shares the screen and does the [repository setup](./docs/SETUP_REPO.md)
 * everybody do `git clone` of your project and run `./mvnw clean package` to check everything is fine
 * vote for two+ colleagues who will do the [initial decomposition](./docs/INITIAL_DECOMPOSITION.md)
@@ -150,7 +150,7 @@ The demo is sharing the screen and:
 
 The final demo is similar to weekly demo but time slot will be 20 minute per team.
 
-For the final demo choose the team speaker and build zthe agenda on:
+For the final demo choose the team speaker and build the agenda on:
 
 1. Demonstrating the functionality (Postman)
 2. Explain the most successes and failures in this project
